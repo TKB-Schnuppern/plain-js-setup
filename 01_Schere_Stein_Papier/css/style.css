@@ -1,0 +1,12 @@
+* { box-sizing: border-box }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; display: grid; place-items: center; min-height: 100vh; background: #0f172a; color: #e5e7eb }
+main { width: min(520px, 92vw); background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 20px }
+
+
+h1 { margin: 0 0 12px; text-align: center }
+.score { display: flex; justify-content: space-between; background: #0b1220; border-radius: 8px; padding: 10px; margin: 6px 0 14px }
+.choices { display: flex; gap: 8px; justify-content: center; margin-bottom: 12px }
+button { padding: 8px 12px; border-radius: 8px; border: 1px solid #334155; background: #0b1220; color: inherit; cursor: pointer }
+button:hover { background: #102037 }
+.secondary { display: block; margin: 10px auto 0 }
+#status { text-align: center; margin: 8px 0 0 }

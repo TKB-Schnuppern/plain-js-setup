@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schere Stein Papier – Starter</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+  <h1>Schere · Stein · Papier</h1>
+
+
+  <div class="score">
+    <span>Du: <strong id="pScore">0</strong></span>
+    <span>Computer: <strong id="cScore">0</strong></span>
+  </div>
+
+
+  <div class="choices">
+    <button data-move="schere">Schere</button>
+    <button data-move="stein">Stein</button>
+    <button data-move="papier">Papier</button>
+  </div>
+
+
+  <p id="status">Wähle deinen Zug.</p>
+
+
+  <button id="reset" class="secondary">Zurücksetzen</button>
+</main>
+
+<script src="src/spiel-logik.js"></script>
+<script src="src/ui-logik.js"></script>
+</body>
+</html>

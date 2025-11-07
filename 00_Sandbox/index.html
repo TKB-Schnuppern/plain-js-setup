@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Coding Playground</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="playground">
+    <h1>JavaScript Coding Playground</h1>
+    <p>Einfacher Einstieg in die Programmierung mit JavaScript.</p>
+
+    <button onclick="clearOutput()">Ausgabe leeren</button>
+    <button onclick="runDemo()">Demo starten</button>
+
+    <h2>Ausgabe:</h2>
+    <pre id="output"></pre>
+  </section>
+
+  <section class="tasks">
+    <div class="task">
+    <h2>Aufgabe 1: Wiederholung mit Schleifen</h2>
+    <p>Schreibe eine Schleife, die die Zahlen von 1 bis 3 ausgibt:</p>
+    <button onclick="task1()">Ausführen</button>
+  </div>
+
+  <div class="task">
+    <h2>Aufgabe 2: Variablen verwenden</h2>
+    <p>Erstelle eine Variable mit deinem Namen und gib eine Begrüssung aus:</p>
+    <button onclick="task2()">Ausführen</button>
+  </div>
+
+  <div class="task">
+    <h2>Aufgabe 3: Eingaben und Bedingungen</h2>
+    <p>Lass den Benutzer zwei Zahlen eingeben und vergleiche sie:</p>
+    <button onclick="task3()">Ausführen</button>
+  </div>
+    
+  </section>
+
+
+  <script>
+    function write(text) {
+      document.getElementById("output").textContent += text + "\n"
+    }
+
+    function clearOutput() {
+      document.getElementById("output").textContent = ""
+    }
+
+    function runDemo() {
+      clearOutput()
+      write("Hallo Welt")
+      write("Willkommen im Mini Coding Playground!")
+    }
+
+    function task1() {
+      clearOutput()
+      // TODO: Schleife schreiben, um Zahlen von 1 bis 3 auszugeben
+      write(1)
+      write(2)
+      write(3)
+    }
+
+    function task2() {
+      clearOutput()
+      // TODO: Begrüssung ausgeben
+      write("TODO: Begrüssung ausgeben")
+    }
+
+    function task3() {
+      clearOutput()
+      let a = parseInt(prompt("Gib eine Zahl ein"))
+      let b = parseInt(prompt("Noch eine Zahl"))
+      write("Eingegebene Zahlen: " + a + " und " + b)
+      // TODO: Zahlen vergleichen und Ergebnis ausgeben
+    }
+  </script>
+</body>
+</html>

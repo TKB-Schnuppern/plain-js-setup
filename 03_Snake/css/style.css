@@ -1,0 +1,82 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --line: #334155;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --snake: #22c55e;
+  --head: #16a34a;
+  --apple: #ef4444;
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(680px, 95vw);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+h1 { margin: 0; font-size: 22px }
+.hud { color: var(--muted); display: flex; gap: 16px }
+
+.controls {
+  margin: 10px 0 12px;
+  display: flex; gap: 8px;
+}
+button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.6; cursor: not-allowed }
+
+.board {
+  --size: 15;             /* 15x15 Feld */
+  --cell: 24px;           /* Zellengroesse */
+  display: grid;
+  grid-template-columns: repeat(var(--size), var(--cell));
+  grid-auto-rows: var(--cell);
+  gap: 4px;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* einzelne Zellen */
+.cell {
+  width: var(--cell);
+  height: var(--cell);
+  border-radius: 6px;
+  background: rgba(2,6,23,0.35);
+  outline: 1px dashed rgba(148,163,184,0.2);
+}
+
+/* Darstellung Schlange / Apfel */
+.cell.apple { background: var(--apple) }
+.cell.snake { background: var(--snake) }
+.cell.head  { background: var(--head) }
+
+.aufgaben { margin-top: 12px; color: var(--muted) }
+.hint { color: var(--muted) }

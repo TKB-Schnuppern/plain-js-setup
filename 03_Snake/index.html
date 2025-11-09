@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card">
+    <header class="top">
+      <h1>Snake</h1>
+      <div class="hud">
+        <span>Punkte: <strong id="score">0</strong></span>
+        <span>Highscore: <strong id="high">0</strong></span>
+      </div>
+    </header>
+
+    <div class="controls">
+      <button id="startBtn" type="button">Start</button>
+      <button id="pauseBtn" type="button" disabled>Pausieren</button>
+      <button id="resetBtn" type="button">Neu starten</button>
+    </div>
+
+    <!-- Spielfeld -->
+    <div id="board"
+         class="board"
+         role="grid"
+         aria-label="Snake Spielfeld">
+      <!-- Zellen werden per JS generiert -->
+    </div>
+
+    <details class="aufgaben">
+      <summary>Klick zum Aufklappen – Aufgaben / TODOs</summary>
+      <ol>
+        <li><strong>TODO 1:</strong> Geschwindigkeit mit steigendem Score erhöhen</li>
+        <li><strong>TODO 2:</strong> Optionales „Wand-Wrap“ (durch Wände raus, auf der anderen Seite rein)</li>
+        <li><strong>TODO 3:</strong> Hindernisse zufällig platzieren (und bei Kollision verlieren)</li>
+      </ol>
+    </details>
+
+    <p class="hint">
+      Steuerung: Pfeiltasten oder WASD. Beisse dich nicht selbst und keine Wand!
+    </p>
+  </main>
+
+  <script src="src/spiel-logik.js"></script>
+</body>
+</html>

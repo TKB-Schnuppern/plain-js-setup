@@ -80,5 +80,4 @@ Es ist ein guter Einstieg in animierte Spieleentwicklung mit JavaScript.
 ## 🧭 Hinweise
 
 - Der Code kann ohne Installation direkt im Browser ausgeführt werden.  
-- Alle Aufgaben bauen schrittweise aufeinander auf.  
 - Die **Theorieslides** bieten ergänzende Erklärungen zu den jeweiligen Themen.  

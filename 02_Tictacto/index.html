@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tic-Tac-Toe (Checkbox Edition)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <h1>Tic-Tac-Toe</h1>
+    <p class="hint">
+      Koordinaten: Reihen A–C, Spalten 1–3. Du bist <strong>X</strong>, der Computer ist <strong>O</strong>.
+    </p>
+
+    <!-- Spielfeld: 3×3 Checkboxen mit Koordinaten -->
+    <form id="board" aria-label="Spielfeld 3 mal 3">
+      <!-- Zeile A -->
+      <div class="row">
+        <label class="cell">
+          <input type="checkbox" id="A1" data-coord="A1">
+          <span class="coord">A1</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+        <label class="cell">
+          <input type="checkbox" id="A2" data-coord="A2">
+          <span class="coord">A2</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+        <label class="cell">
+          <input type="checkbox" id="A3" data-coord="A3">
+          <span class="coord">A3</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+      </div>
+      <!-- Zeile B -->
+      <div class="row">
+        <label class="cell">
+          <input type="checkbox" id="B1" data-coord="B1">
+          <span class="coord">B1</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+        <label class="cell">
+          <input type="checkbox" id="B2" data-coord="B2">
+          <span class="coord">B2</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+        <label class="cell">
+          <input type="checkbox" id="B3" data-coord="B3">
+          <span class="coord">B3</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+      </div>
+      <!-- Zeile C -->
+      <div class="row">
+        <label class="cell">
+          <input type="checkbox" id="C1" data-coord="C1">
+          <span class="coord">C1</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+        <label class="cell">
+          <input type="checkbox" id="C2" data-coord="C2">
+          <span class="coord">C2</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+        <label class="cell">
+          <input type="checkbox" id="C3" data-coord="C3">
+          <span class="coord">C3</span>
+          <span class="mark" aria-hidden="true"></span>
+        </label>
+      </div>
+    </form>
+
+    <section class="statusbar">
+      <div id="status" aria-live="polite">Am Zug: Spieler X</div>
+      <button id="reset" type="button">Neu starten</button>
+    </section>
+  </main>
+
+  <script src="src/spiel-logik.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --line: #334155;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --win: #22c55e;
+  --x: #f59e0b; /* X-Farbe */
+  --o: #60a5fa; /* O-Farbe */
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+main {
+  width: min(640px, 95vw);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+h1 { margin: 0 0 8px 0; font-size: 22px }
+.hint { color: var(--muted); margin: 0 0 14px 0 }
+
+#board {
+  display: grid;
+  gap: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 10px;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Zelle mit Checkbox */
+.cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+.cell:hover { transform: translateY(-1px); border-color: var(--accent) }
+
+/* Checkbox unsichtbar, aber weiterhin zugänglich */
+.cell input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Koordinate klein in der Ecke */
+.coord {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Markierung X/O wird per JS als data-mark gesetzt */
+.mark::after {
+  content: attr(data-mark);
+  font-weight: 900;
+  font-size: clamp(28px, 8vw, 54px);
+}
+
+.cell.won { background: rgba(34,197,94,0.12); border-color: var(--win) }
+
+/* Farben für X und O */
+.cell.data-x .mark::after { color: var(--x) }
+.cell.data-o .mark::after { color: var(--o) }
+
+.statusbar {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+#status { color: var(--text) }
+
+#reset {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
